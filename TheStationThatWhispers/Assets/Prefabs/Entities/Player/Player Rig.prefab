@@ -78,6 +78,14 @@ MonoBehaviour:
   HashOfParent:
   - Hash: -540116283
     HashOfParent: 756556552
+  - Hash: 1440827272
+    HashOfParent: -540116283
+  - Hash: -1878009027
+    HashOfParent: -540116283
+  - Hash: -653006379
+    HashOfParent: -540116283
+  - Hash: -1065819857
+    HashOfParent: -540116283
   m_LegacyLookAt: {fileID: 0}
   m_LegacyFollow: {fileID: 0}
 --- !u!1 &1433063335096550354
@@ -284,7 +292,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60.000004
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -411,7 +419,7 @@ Transform:
   m_GameObject: {fileID: 7838364471940344118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5955, z: 0.159}
+  m_LocalPosition: {x: 0, y: 1.631, z: 0.089}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -444,7 +452,7 @@ Transform:
   m_GameObject: {fileID: 8317232927543167488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5955, z: 0.159}
+  m_LocalPosition: {x: 0, y: 1.631, z: 0.089}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -511,7 +519,7 @@ MonoBehaviour:
   CameraSide: 1
   CameraDistance: 0
   AvoidObstacles:
-    Enabled: 0
+    Enabled: 1
     CollisionFilter:
       serializedVersion: 2
       m_Bits: 1
