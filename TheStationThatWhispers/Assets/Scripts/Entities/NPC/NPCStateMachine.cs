@@ -29,7 +29,7 @@ public class NPCStateMachine : StateMachine
 
     [field: Header("AI Behavior")]
 
-    [field: SerializeField] NPCStartingState StateToStart;
+    [field: SerializeField] NPCMainState MainNPCBehavior;
 
 
 
@@ -37,13 +37,24 @@ public class NPCStateMachine : StateMachine
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-     
-        
-        switch (StateToStart)
+        NPCStartBehavior();
+
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void NPCStartBehavior()
+    {
+        switch (MainNPCBehavior)
         {
 
 
-            case NPCStartingState.Idle:
+            case NPCMainState.Idle:
 
                 Debug.Log("Starting with Idle");
 
@@ -52,7 +63,7 @@ public class NPCStateMachine : StateMachine
                 break;
 
 
-            case NPCStartingState.Roam:
+            case NPCMainState.Roam:
 
                 Debug.Log("Starting with Roaming");
 
@@ -63,7 +74,7 @@ public class NPCStateMachine : StateMachine
 
 
 
-            case NPCStartingState.Talk:
+            case NPCMainState.Talk:
 
 
                 Debug.Log("Starting with Talking");
@@ -73,18 +84,12 @@ public class NPCStateMachine : StateMachine
                 break;
 
         }
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
 
-public enum NPCStartingState
+public enum NPCMainState
 {
     Idle,
     Roam,
