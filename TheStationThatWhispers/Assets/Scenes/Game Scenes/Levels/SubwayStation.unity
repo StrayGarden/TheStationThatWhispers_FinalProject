@@ -995,9 +995,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1903790276}
+  - {fileID: 816355330}
   - {fileID: 1108588232}
   - {fileID: 46298551}
-  - {fileID: 816355330}
   - {fileID: 1377927747}
   - {fileID: 476548587}
   - {fileID: 32800367}
@@ -1121,7 +1121,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 3.72
@@ -2739,8 +2739,8 @@ Transform:
   m_GameObject: {fileID: 1382483328}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.95, y: 5.64, z: 0}
-  m_LocalScale: {x: 0.4899473, y: 11.328686, z: 111.239365}
+  m_LocalPosition: {x: -30.95, y: 3.67, z: 0}
+  m_LocalScale: {x: 0.4899473, y: 9.642298, z: 111.239365}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 317759258}

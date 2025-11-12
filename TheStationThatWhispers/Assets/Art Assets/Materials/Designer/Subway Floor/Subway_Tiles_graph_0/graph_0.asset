@@ -17,14 +17,14 @@ MonoBehaviour:
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: 619551c5-060d-4311-8c7b-b268077bbe2b
+  GUID: 02da1715-f6dd-470b-a281-fd45401760e6
   Index: 0
   Input:
-  - rid: 2979418410609803572
-  - rid: 2979418410609803573
-  - rid: 2979418410609803574
-  - rid: 2979418410609803575
-  - rid: 2979418410609803576
+  - rid: 2979418418129403916
+  - rid: 2979418418129403917
+  - rid: 2979418418129403918
+  - rid: 2979418418129403919
+  - rid: 2979418418129403920
   Output:
   - Index: 0
     VirtualOutputIndex: 6
@@ -130,7 +130,7 @@ MonoBehaviour:
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
-  OutputMaterial: {fileID: 2100000, guid: ced0104b489f44a4896ae6cbacd304b5, type: 2}
+  OutputMaterial: {fileID: 2100000, guid: 70e06b5b96a3c3647a8a9813cfb0d60b, type: 2}
   DefaultPreset: " <sbspreset pkgurl=\"pkg://Subway_FloorTiles\" label=\"\" >\n 
     <presetinput identifier=\"$outputsize\" uid=\"3182539595\" type=\"8\" value=\"10,10\"
     />\n </sbspreset>\n"
@@ -141,7 +141,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2979418410609803572
+    - rid: 2979418418129403916
       type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
           SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []
-    - rid: 2979418410609803573
+    - rid: 2979418418129403917
       type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
           LabelTrue: 
           EnumValueCount: 0
           EnumValues: []
-    - rid: 2979418410609803574
+    - rid: 2979418418129403918
       type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 2
@@ -193,16 +193,16 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 1.05
+        Data: 1.065
         NumericalDescription:
-          DefaultValue: 1.05
+          DefaultValue: 1.065
           MinValue: 0.97
           MaxValue: 1.06
           SliderStep: 0.01
           SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []
-    - rid: 2979418410609803575
+    - rid: 2979418418129403919
       type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 3
@@ -224,7 +224,7 @@ MonoBehaviour:
           LabelTrue: 
           EnumValueCount: 0
           EnumValues: []
-    - rid: 2979418410609803576
+    - rid: 2979418418129403920
       type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 4
