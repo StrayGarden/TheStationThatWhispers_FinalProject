@@ -313,9 +313,9 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 3117462189942866220}
   <Animator>k__BackingField: {fileID: 848692391113234795}
   <ForceReceiver>k__BackingField: {fileID: 1500072767182926886}
-  <WalkMovementSpeed>k__BackingField: 0
-  <RunMovementSpeed>k__BackingField: 0
-  StateToStart: 0
+  <WalkMovementSpeed>k__BackingField: 6
+  <RunMovementSpeed>k__BackingField: 8
+  MainNPCBehavior: 0
 --- !u!95 &848692391113234795
 Animator:
   serializedVersion: 7

@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 3426043782780120307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.29, y: 2.351, z: 43.279}
+  m_LocalPosition: {x: -27.29, y: 2.351, z: 43.246998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -419,7 +419,7 @@ Transform:
   m_GameObject: {fileID: 7838364471940344118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.631, z: 0.089}
+  m_LocalPosition: {x: 0, y: 1.631, z: 0.057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 1605623318706206702}
   - component: {fileID: 6093720475260783204}
   - component: {fileID: 4279723948227389950}
+  - component: {fileID: 2874177731588013986}
   m_Layer: 0
   m_Name: FirstPersonPlayerCamera
   m_TagString: Untagged
@@ -452,7 +453,7 @@ Transform:
   m_GameObject: {fileID: 8317232927543167488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.631, z: 0.089}
+  m_LocalPosition: {x: 0, y: 1.631, z: 0.057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -516,17 +517,30 @@ MonoBehaviour:
   Damping: {x: 0, y: 0, z: 0}
   ShoulderOffset: {x: 0, y: 0, z: 0}
   VerticalArmLength: 0
-  CameraSide: 1
+  CameraSide: 0.6
   CameraDistance: 0
   AvoidObstacles:
     Enabled: 1
     CollisionFilter:
       serializedVersion: 2
       m_Bits: 1
-    IgnoreTag: 
-    CameraRadius: 0.2
+    IgnoreTag: Player
+    CameraRadius: 0.15
     DampingIntoCollision: 0
-    DampingFromCollision: 0.5
+    DampingFromCollision: 0
+--- !u!114 &2874177731588013986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317232927543167488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotateWithFollowTarget
+  Damping: 0.04
 --- !u!1001 &1046191735657299622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -779,13 +793,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.71
+  m_Height: 1.89
   m_Radius: 0.24
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.92, z: 0}
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!54 &1401658242426532231
 Rigidbody:
   m_ObjectHideFlags: 0
