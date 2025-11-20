@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NPCStateMachine : StateMachine
 {
@@ -19,6 +20,8 @@ public class NPCStateMachine : StateMachine
 
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
 
+    [field: SerializeField] public NavMeshAgent Agent { get; private set; }
+
     [field: Header("NPC Movement")]
 
     //Movement Speed variable for free look state
@@ -37,6 +40,11 @@ public class NPCStateMachine : StateMachine
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        //Makes sure nav mesh can't move and rotate gameobject //better to do movement through code
+        Agent.updatePosition = false;
+        Agent.updateRotation = false;
+
         NPCStartBehavior();
 
     }
@@ -67,7 +75,7 @@ public class NPCStateMachine : StateMachine
 
                 Debug.Log("Starting with Roaming");
 
-                SwitchState(new NPCIdleState(this));
+                SwitchState(new NPCRoamingState(this));
 
 
                 break;
@@ -75,6 +83,15 @@ public class NPCStateMachine : StateMachine
 
 
             case NPCMainState.Talk:
+
+
+                Debug.Log("Starting with Talking");
+
+                SwitchState(new NPCTalkingState(this));
+
+                break;
+
+            case NPCMainState.Sitting:
 
 
                 Debug.Log("Starting with Talking");
@@ -93,5 +110,6 @@ public enum NPCMainState
 {
     Idle,
     Roam,
-    Talk
+    Talk,
+    Sitting
 }

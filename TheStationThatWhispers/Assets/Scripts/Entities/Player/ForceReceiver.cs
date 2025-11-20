@@ -11,6 +11,7 @@ public class ForceReceiver : MonoBehaviour
     //stores character controller
     [SerializeField] private CharacterController controller;
 
+    [SerializeField] private NavMeshAgent agent;
 
     [SerializeField] private float drag = 0.3f;
 
@@ -38,7 +39,18 @@ public class ForceReceiver : MonoBehaviour
 
         impact = Vector3.SmoothDamp(impact, Vector3.zero, ref dampingVelocity, drag);
 
+        //checks if the nav mesh agent isn't null
+        if (agent != null)
+        {
+            //if there is no longer knockback force turns the nav mesh back on
+            if (impact.sqrMagnitude < 0.2f * 0.2f)
+            {
+                impact = Vector3.zero;
+                agent.enabled = true;
+            }
 
+
+        }
 
 
     }
@@ -48,7 +60,17 @@ public class ForceReceiver : MonoBehaviour
     {
         impact += force;
 
-        
+        //disables the nav mesh agent for knockback
+        if (agent != null)
+        {
+            agent.enabled = false;
+        }
 
+
+    }
+
+    public void Jump(float jumpForce)
+    {
+        verticalVelocity += jumpForce;
     }
 }
