@@ -23,6 +23,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     //Interaction Event
     public event Action InteractEvent;
 
+    public event Action JumpEvent;
+
     //grabs the controls script generated from the input map
     private Controls controls;
 
@@ -94,5 +96,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) { return; }
 
         InteractEvent?.Invoke();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        JumpEvent?.Invoke();
     }
 }

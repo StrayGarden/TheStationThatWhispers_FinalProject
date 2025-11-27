@@ -86,6 +86,16 @@ MonoBehaviour:
     HashOfParent: -540116283
   - Hash: -1065819857
     HashOfParent: -540116283
+  - Hash: 788460410
+    HashOfParent: 756556552
+  - Hash: 1110700688
+    HashOfParent: 756556552
+  - Hash: -904565787
+    HashOfParent: 1110700688
+  - Hash: -729804286
+    HashOfParent: 1110700688
+  - Hash: 1914514016
+    HashOfParent: 756556552
   m_LegacyLookAt: {fileID: 0}
   m_LegacyFollow: {fileID: 0}
 --- !u!1 &1433063335096550354
@@ -253,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 3426043782780120307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.29, y: 2.351, z: 43.246998}
+  m_LocalPosition: {x: -2.91, y: 11.8810005, z: 36.3559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -277,12 +287,12 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 8.001
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
   m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 21.946, y: 16.002}
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -290,7 +300,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 90
   orthographic: 0
@@ -393,7 +403,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
+  CustomBlends: {fileID: 11400000, guid: a0c5e02a07c3f0a4d8c0230de9d45062, type: 2}
 --- !u!1 &7838364471940344118
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +429,7 @@ Transform:
   m_GameObject: {fileID: 7838364471940344118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.631, z: 0.057}
+  m_LocalPosition: {x: 0, y: 1.631, z: 0.1059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -453,7 +463,7 @@ Transform:
   m_GameObject: {fileID: 8317232927543167488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.631, z: 0.057}
+  m_LocalPosition: {x: -2.91, y: 11.8810005, z: 36.3559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,7 +495,7 @@ MonoBehaviour:
   Lens:
     FieldOfView: 90
     OrthographicSize: 5
-    NearClipPlane: 0.3
+    NearClipPlane: 0.01
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -551,15 +561,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 36.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -616,6 +626,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8169834706387428651}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6295267610046570817}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd289fd75b73e264e987a4491c360e18, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1896435915927038837}
@@ -738,7 +751,8 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 6912537789389980471}
   <ForceReceiver>k__BackingField: {fileID: 3142113630767236376}
   <WalkMovementSpeed>k__BackingField: 6
-  <RunMovementSpeed>k__BackingField: 8
+  <RunMovementSpeed>k__BackingField: 10
+  <JumpForce>k__BackingField: 8
   <InteractionSphereCastRadius>k__BackingField: 0
   <InteractionMaxDistance>k__BackingField: 0
   <StartRayCastTransformPoint>k__BackingField: {fileID: 0}
@@ -746,8 +760,8 @@ MonoBehaviour:
   <MainCameraTransform>k__BackingField: {fileID: 1605623318706206702}
   FirstPersonCameraView: 1
   <CameraRotationSpeed>k__BackingField: 404.2
-  <TopClamp>k__BackingField: 90
-  <BottomClamp>k__BackingField: -90
+  <TopClamp>k__BackingField: 85
+  <BottomClamp>k__BackingField: -85
   <CurrentStateDebug>k__BackingField: 0
 --- !u!114 &3142113630767236376
 MonoBehaviour:
@@ -762,7 +776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceReceiver
   controller: {fileID: 1896435915927038837}
-  drag: 0.3
+  agent: {fileID: 0}
+  drag: 0.06
 --- !u!114 &8169834706387428651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,6 +790,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e43e513df19ad40ae97939c8a2472d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputReader
+--- !u!114 &6295267610046570817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163739300981130231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f58fd5dc7da60a41b4a94ffdf9a5e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraManager
+  firstPersonCMCam: {fileID: 6093720475260783204}
 --- !u!143 &1896435915927038837
 CharacterController:
   m_ObjectHideFlags: 0

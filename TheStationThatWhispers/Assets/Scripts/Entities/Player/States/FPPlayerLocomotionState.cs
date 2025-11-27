@@ -37,18 +37,16 @@ public class FPPlayerLocomotionState : PlayerBaseState
         //play the free look state blend tree hash
         stateMachine.Animator.CrossFadeInFixedTime(FPFreeLookBlendTreeHash, CrossFadeDuration);
 
-        //subscribes button to change camera event
-        //stateMachine.InputReader.ChangeViewEvent += ChangeToThirdPerson;
+
+        //subscribes to Jump action
+        stateMachine.InputReader.JumpEvent += OnJump;
 
         stateMachine.InputReader.InteractEvent += OnInteractable;
 
 
     }
 
-    private void OnInteractable()
-    {
-        throw new NotImplementedException();
-    }
+  
 
     public override void Tick(float deltaTime)
     {
@@ -72,10 +70,10 @@ public class FPPlayerLocomotionState : PlayerBaseState
 
 
         //if run input event then going to run state
-        //if (stateMachine.InputReader.IsRunning)
-        //{
-        //    stateMachine.SwitchState(new FPPlayerRunningState(stateMachine));
-        //}
+        if (stateMachine.InputReader.IsRunning)
+        {
+            stateMachine.SwitchState(new FPPlayerRunningState(stateMachine));
+        }
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
@@ -105,8 +103,20 @@ public class FPPlayerLocomotionState : PlayerBaseState
         //subscribes button to change camera event
         //stateMachine.InputReader.ChangeViewEvent -= ChangeToThirdPerson;
 
+        stateMachine.InputReader.JumpEvent -= OnJump;
+
         stateMachine.InputReader.InteractEvent -= OnInteractable;
 
+    }
+
+    private void OnJump()
+    {
+        stateMachine.SwitchState(new FPPlayerJumpState(stateMachine));
+    }
+
+    private void OnInteractable()
+    {
+        throw new NotImplementedException();
     }
 
     //private void ChangeToThirdPerson()

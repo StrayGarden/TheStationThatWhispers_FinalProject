@@ -24,7 +24,8 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 5f7cb5d716bc35447947c9ee004af6f7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _OCCLUSIONMAP
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _SURFACE_TYPE_TRANSPARENT
@@ -156,13 +157,15 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Height_Amount: 10.12
+    - _Height_Amount: 1.37
     - _LOD: 0
     - _LODThreshold: 0.2
     - _Metallic: 0
     - _Metallic_Strength: 1
     - _Normal_Scale: 1
     - _Normal_Strength: 1
+    - _OCCLUSIONMAP: 1
+    - _OCCLUSIONMAP_1: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.0193
     - _QueueControl: 0

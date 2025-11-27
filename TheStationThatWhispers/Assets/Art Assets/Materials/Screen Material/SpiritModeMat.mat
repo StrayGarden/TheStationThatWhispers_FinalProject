@@ -120,16 +120,16 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _VignettePower: 2.75
+    - _VignettePower: 2.49
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BorderTintColor: {r: 0.6739327, g: 0.9433962, b: 0.3960484, a: 0.8}
+    - _BorderTintColor: {r: 0.5058824, g: 1, b: 0, a: 0.8}
     - _Color: {r: 0.4273318, g: 0.9339623, b: 0.45266935, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ScreenColor: {r: 0.71488965, g: 0.8018868, b: 0.75190973, a: 0.4980392}
+    - _ScreenColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.4980392}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _TintColor: {r: 0, g: 0.8113207, b: 0.013752572, a: 0.94509804}
   m_BuildTextureStacks: []

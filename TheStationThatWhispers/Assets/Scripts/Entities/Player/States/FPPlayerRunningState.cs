@@ -10,7 +10,7 @@ public class FPPlayerRunningState : PlayerBaseState
     private readonly int FreeLookSpeedHash = Animator.StringToHash("MoveSpeed");
 
     //hash for free look state's blend tree
-    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
+    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FPRunBlendTree");
 
     //time to transition from states
     private const float CrossFadeDuration = 0.3f;
@@ -28,6 +28,10 @@ public class FPPlayerRunningState : PlayerBaseState
         //play the free look state blend tree hash
         stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
 
+
+        //subscribes to Jump action
+        stateMachine.InputReader.JumpEvent += OnJump;
+
         //subscribes button to change camera event
         //stateMachine.InputReader.ChangeViewEvent += ChangeToThirdPerson;
     }
@@ -39,7 +43,7 @@ public class FPPlayerRunningState : PlayerBaseState
         Vector3 movement = CalculateMovement();
 
         //accesses the move method on the character controller(moving by movement vector 3 * FreeLookMovementSpeed * real time)
-        Move(movement * stateMachine.WalkMovementSpeed, deltaTime);
+        Move(movement * stateMachine.RunMovementSpeed, deltaTime);
 
         //debugs current state
         if (stateMachine.CurrentStateDebug)
@@ -48,6 +52,11 @@ public class FPPlayerRunningState : PlayerBaseState
             Debug.Log("Run State");
         }
 
+        if(!stateMachine.InputReader.IsRunning)
+        {
+                stateMachine.SwitchState(new FPPlayerLocomotionState(stateMachine));
+            
+        }
            
 
         //will swutch back to idle state if no movement input
@@ -64,6 +73,9 @@ public class FPPlayerRunningState : PlayerBaseState
     {
         //subscribes button to change camera event
         //stateMachine.InputReader.ChangeViewEvent -= ChangeToThirdPerson;
+
+
+        stateMachine.InputReader.JumpEvent -= OnJump;
     }
 
     //private void ChangeToThirdPerson()
@@ -71,6 +83,12 @@ public class FPPlayerRunningState : PlayerBaseState
     //    //subscribes button to change camera event
     //    stateMachine.SwitchState(new TPPlayerFreeLookState(stateMachine));
     //}
+
+
+    private void OnJump()
+    {
+        stateMachine.SwitchState(new FPPlayerJumpState(stateMachine));
+    }
 
 
     //makes movement relative to the camera
