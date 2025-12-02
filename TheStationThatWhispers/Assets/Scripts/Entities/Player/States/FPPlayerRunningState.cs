@@ -52,7 +52,7 @@ public class FPPlayerRunningState : PlayerBaseState
             Debug.Log("Run State");
         }
 
-        if(!stateMachine.InputReader.IsRunning)
+        if(!stateMachine.InputReader.IsRunning || stateMachine.InputReader.MovementValue == Vector2.zero)
         {
                 stateMachine.SwitchState(new FPPlayerLocomotionState(stateMachine));
             
@@ -60,11 +60,11 @@ public class FPPlayerRunningState : PlayerBaseState
            
 
         //will swutch back to idle state if no movement input
-        if (stateMachine.InputReader.MovementValue == Vector2.zero)
-        {
-            stateMachine.SwitchState(new FPPlayerLocomotionState(stateMachine));
-            //stateMachine.SwitchState(new FPPlayerFreeLookState(stateMachine));
-        }
+        //if (stateMachine.InputReader.MovementValue == Vector2.zero)
+        //{
+        //    stateMachine.SwitchState(new FPPlayerLocomotionState(stateMachine));
+        //    //stateMachine.SwitchState(new FPPlayerFreeLookState(stateMachine));
+        //}
 
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1f, AnimatorDampTime, deltaTime);
     }

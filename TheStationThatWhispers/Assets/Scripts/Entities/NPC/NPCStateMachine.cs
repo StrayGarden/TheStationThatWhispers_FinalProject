@@ -21,6 +21,8 @@ public class NPCStateMachine : StateMachine
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
 
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
+ 
+    [field: SerializeField] public NPCDataSO NPCData { get; private set; }
 
     [field: Header("NPC Movement")]
 
@@ -31,6 +33,8 @@ public class NPCStateMachine : StateMachine
 
 
     [field: Header("AI Behavior")]
+
+
 
     [field: SerializeField] NPCMainState MainNPCBehavior;
 
@@ -45,7 +49,19 @@ public class NPCStateMachine : StateMachine
         Agent.updatePosition = false;
         Agent.updateRotation = false;
 
+
+        NPCData.OverrideAnimator(Animator);
+
         NPCStartBehavior();
+
+
+        //NPCData.RoamingBehavior[roamDataIndex]
+
+        //foreach(NPCData.RoamingBehavior roamPoints in )
+        //{
+
+        //}
+
 
     }
 
@@ -75,7 +91,7 @@ public class NPCStateMachine : StateMachine
 
                 Debug.Log("Starting with Roaming");
 
-                SwitchState(new NPCRoamingState(this));
+                SwitchState(new NPCRoamingState(this, 0));
 
 
                 break;
@@ -96,7 +112,7 @@ public class NPCStateMachine : StateMachine
 
                 Debug.Log("Starting with Talking");
 
-                SwitchState(new NPCIdleState(this));
+                SwitchState(new NPCSittingState(this));
 
                 break;
 

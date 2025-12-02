@@ -317,9 +317,10 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 848692391113234795}
   <ForceReceiver>k__BackingField: {fileID: 1500072767182926886}
   <Agent>k__BackingField: {fileID: 6860258965717205439}
+  <NPCData>k__BackingField: {fileID: 11400000, guid: 5b83030725a4ff64da5699290aa0abaa, type: 2}
   <WalkMovementSpeed>k__BackingField: 6
   <RunMovementSpeed>k__BackingField: 8
-  MainNPCBehavior: 0
+  MainNPCBehavior: 3
 --- !u!95 &848692391113234795
 Animator:
   serializedVersion: 7

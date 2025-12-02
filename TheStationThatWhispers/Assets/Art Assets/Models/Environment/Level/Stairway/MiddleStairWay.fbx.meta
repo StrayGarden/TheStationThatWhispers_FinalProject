@@ -3,7 +3,12 @@ guid: 272ba57ba01f6fb4493d4ddd17043031
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box_Collider
+    second: {fileID: 2100000, guid: 44a7149b3ef21704b8dfe93bb9924ca4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
