@@ -8,18 +8,18 @@ public class NPCTalkingState : NPCBaseState
 
     public override void Enter()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Entering");
     }
 
     
 
     public override void Tick(float deltaTime)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Ticking");
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Exiting");
     }
 }

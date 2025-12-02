@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -39,7 +42,30 @@ public class NPCStateMachine : StateMachine
     [field: SerializeField] NPCMainState MainNPCBehavior;
 
 
+    [field: SerializeField] public GameObject[] RoamPoints { get; private set; }
 
+
+
+    private void Awake()
+    {
+
+        RoamPoints = new GameObject[NPCData.RoamingBehavior.Length];
+
+        NPCData.CreateRoamPaths(RoamPoints);
+
+        Debug.Log(RoamPoints);
+
+        NPCData.OverrideAnimator(Animator);
+
+
+
+        //foreach (GameObject roamPatrolParent in RoamPoints)
+        //{
+        //    if (roamPatrolParent != null)
+        //        roamPatrolParent.SetActive(false);
+        //}
+
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,7 +76,7 @@ public class NPCStateMachine : StateMachine
         Agent.updateRotation = false;
 
 
-        NPCData.OverrideAnimator(Animator);
+        
 
         NPCStartBehavior();
 

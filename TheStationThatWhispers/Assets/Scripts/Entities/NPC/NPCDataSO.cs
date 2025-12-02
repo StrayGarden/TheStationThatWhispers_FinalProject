@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Unity.Cinemachine.CinemachineSplineRoll;
 
 
 //Creates menu asset for adding modular weapon scriptible object
@@ -29,5 +30,26 @@ public class NPCDataSO : ScriptableObject
             Debug.Log("Animator Override Controller is null");
 
         }
+    }
+
+    public void CreateRoamPaths(GameObject[] NPCRoamPoints)
+    {
+
+        
+
+        for (int i = 0; i < RoamingBehavior.Length; i++)
+        {
+
+            GameObject roamPoints = RoamingBehavior[i].RoamPoints;
+
+            NPCRoamPoints[i] = roamPoints;
+
+            NPCRoamPoints[i] = Instantiate(roamPoints);
+
+            
+        }
+
+
+
     }
 }

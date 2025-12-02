@@ -1,4 +1,3 @@
-using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,58 +13,98 @@ public class NPCRoamingState : NPCBaseState
     private const float CrossFadeDuration = 0.2f;
 
     //Destination and point counter
-    private RoamingData roamData;
+    private GameObject roamData;
 
-    //private Transform[] patrolPoints;
+    //private GameObject selectedPath;
 
-    private int destinationPoint = 0;
+    private Transform[] patrolPoints;
+
+    private int currentPointIndex = 0;
 
 
     public NPCRoamingState(NPCStateMachine stateMachine, int roamDataIndex) : base(stateMachine)
-    { 
+    {
 
-        roamData = stateMachine.NPCData.RoamingBehavior[roamDataIndex];
+        roamData = stateMachine.RoamPoints[roamDataIndex];
 
     }
-     
+
     public override void Enter()
     {
+
+
         //play the free look state blend tree hash
         stateMachine.Animator.CrossFadeInFixedTime(NPCRoamingBlendTreeHash, CrossFadeDuration);
 
         stateMachine.Agent.autoBraking = false;
 
-        MoveToNextPoint();
+
+        currentPointIndex = 0;
+
+
+        int count = roamData.transform.childCount;
+
+
+        patrolPoints = new Transform[count];
+
+        for (int i = 0; i < count; i++)
+        {
+            patrolPoints[i] = roamData.transform.GetChild(i);
+        }
+
+        Debug.Log("In Roamming state: " + count);
+
+        
+
+        SetNextPoint();
 
     }
 
-  
+
 
     public override void Tick(float deltaTime)
     {
 
-        if (roamData == null)
+
+        Debug.Log("Test");
+
+
+        if (roamData == null || patrolPoints.Length == 0)
         {
             Debug.Log("Roam Data is null");
             return;
         }
 
-        if (stateMachine.NPCData.RoamingBehavior.Length == -1)
+        //if (stateMachine.NPCData.RoamingBehavior.Length == -1)
+        //{
+
+        //    Debug.Log("Not Enough Point");
+        //    return;
+        //}
+
+
+
+        if (!stateMachine.Agent.pathPending && stateMachine.Agent.remainingDistance < 0.5f)
         {
 
-            Debug.Log("Not Enough Point");
-            return;
+            //Add to next point
+            //currentPointIndex++;
+
+           
+
+            if (currentPointIndex > patrolPoints.Length)
+            {
+                Debug.Log("Changing Roam State");
+                stateMachine.SwitchState(new NPCRoamingState(stateMachine, Random.Range(0, stateMachine.NPCData.RoamingBehavior.Length)));
+            }
+
+            Debug.Log("About to move to point");
+
+            SetNextPoint();
         }
 
-        if (roamData.RoamPoints.Length >= destinationPoint)
-        {
-            stateMachine.SwitchState(new NPCRoamingState(stateMachine, Random.Range(0, stateMachine.NPCData.RoamingBehavior.Length)));
-        }
 
-        if (!stateMachine.Agent.pathPending && stateMachine.Agent.remainingDistance > 0.5f)
-        {
-            MoveToNextPoint();
-        }
+        Debug.Log("Moving");
 
         MoveToPoint(deltaTime);
 
@@ -78,18 +117,27 @@ public class NPCRoamingState : NPCBaseState
         stateMachine.Agent.velocity = Vector3.zero;
     }
 
-    void MoveToNextPoint()
+    void SetNextPoint()
     {
 
-        if (roamData.RoamPoints.Length == 0)
-        {
-            return;
-        }
-
-        stateMachine.Agent.destination = roamData.RoamPoints[destinationPoint].position;
+        //if (roamData.RoamPoints.Length == 0)
+        //{
+        //    return;
+        //}
 
 
-        destinationPoint = (destinationPoint + 1) % roamData.RoamPoints.Length;
+
+
+        Debug.Log(patrolPoints[currentPointIndex].position);
+
+        stateMachine.Agent.SetDestination(patrolPoints[currentPointIndex].position);
+
+        //stateMachine.Agent.destination = patrolPoints[currentPointIndex].position;
+
+
+
+
+        currentPointIndex = (currentPointIndex + 1) % patrolPoints.Length;
 
 
 
@@ -97,14 +145,16 @@ public class NPCRoamingState : NPCBaseState
 
     private void MoveToPoint(float deltaTime)
     {
-        if (stateMachine.Agent.isOnNavMesh)
-        {
+        //if (stateMachine.Agent.isOnNavMesh)
+        //{
+
+             Debug.Log("Moving");
             ////turns nav mesh target to be the players transform
             //stateMachine.Agent.destination = stateMachine.PlayerObject.transform.position;
 
             //moves navmesh agent
             Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.WalkMovementSpeed, deltaTime);
-        }
+        //}
 
         //makes sure the nav mesh agent stays in sync with the character controller
         stateMachine.Agent.velocity = stateMachine.Controller.velocity;

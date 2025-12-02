@@ -25,11 +25,11 @@ public class NPCIdleState : NPCBaseState
 
     public override void Tick(float deltaTime)
     {
-       
+        Debug.Log("Ticking");
     }
 
     public override void Exit()
     {
-
+        Debug.Log("Ticking");
     }
 }

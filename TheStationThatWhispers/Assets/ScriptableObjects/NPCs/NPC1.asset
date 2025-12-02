@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b34082cc5a76d840bcb5d26fca6505e, type: 3}
   m_Name: NPC1
   m_EditorClassIdentifier: Assembly-CSharp::NPCDataSO
-  weaponAnimationOverride: {fileID: 0}
+  weaponAnimationOverride: {fileID: 22100000, guid: 56458653519eb844bb23c2fd08900683, type: 2}
   <RoamingBehavior>k__BackingField:
-  - <RoamPoints>k__BackingField:
-    - {fileID: 7403666694278424180, guid: 61a51eb0876fffd46809270b8720596b, type: 3}
+  - <RoamPoints>k__BackingField: {fileID: 3705910774969012698, guid: 61a51eb0876fffd46809270b8720596b, type: 3}
