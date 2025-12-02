@@ -54,7 +54,7 @@ public class NPCRoamingState : NPCBaseState
 
         Debug.Log("In Roamming state: " + count);
 
-        
+
 
         SetNextPoint();
 
@@ -66,7 +66,7 @@ public class NPCRoamingState : NPCBaseState
     {
 
 
-        Debug.Log("Test");
+        //Debug.Log("Test");
 
 
         if (roamData == null || patrolPoints.Length == 0)
@@ -84,13 +84,13 @@ public class NPCRoamingState : NPCBaseState
 
 
 
-        if (!stateMachine.Agent.pathPending && stateMachine.Agent.remainingDistance < 0.5f)
+        if (!stateMachine.Agent.pathPending && stateMachine.Agent.remainingDistance < 1f)
         {
 
             //Add to next point
-            //currentPointIndex++;
+            currentPointIndex++;
 
-           
+
 
             if (currentPointIndex > patrolPoints.Length)
             {
@@ -104,9 +104,11 @@ public class NPCRoamingState : NPCBaseState
         }
 
 
-        Debug.Log("Moving");
+        //Debug.Log("Moving");
 
         MoveToPoint(deltaTime);
+
+        FaceTowardsPoint();
 
         stateMachine.Animator.SetFloat(SpeedHash, 1f, CrossFadeDuration, deltaTime);
     }
@@ -130,7 +132,7 @@ public class NPCRoamingState : NPCBaseState
 
         Debug.Log(patrolPoints[currentPointIndex].position);
 
-        stateMachine.Agent.SetDestination(patrolPoints[currentPointIndex].position);
+        stateMachine.Agent.destination = patrolPoints[currentPointIndex].position;
 
         //stateMachine.Agent.destination = patrolPoints[currentPointIndex].position;
 
@@ -148,15 +150,29 @@ public class NPCRoamingState : NPCBaseState
         //if (stateMachine.Agent.isOnNavMesh)
         //{
 
-             Debug.Log("Moving");
-            ////turns nav mesh target to be the players transform
-            //stateMachine.Agent.destination = stateMachine.PlayerObject.transform.position;
+        Debug.Log("Moving");
+        ////turns nav mesh target to be the players transform
+        //stateMachine.Agent.destination = stateMachine.PlayerObject.transform.position;
 
-            //moves navmesh agent
-            Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.WalkMovementSpeed, deltaTime);
+        //moves navmesh agent
+        Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.WalkMovementSpeed, deltaTime);
         //}
 
         //makes sure the nav mesh agent stays in sync with the character controller
         stateMachine.Agent.velocity = stateMachine.Controller.velocity;
     }
+
+    protected void FaceTowardsPoint()
+    {
+
+
+        //variable for the distance between the player and the target who is accessing this
+        Vector3 lookPos = stateMachine.Agent.destination - stateMachine.transform.position;
+
+        //ignores the y value
+        lookPos.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
+    }
+
 }

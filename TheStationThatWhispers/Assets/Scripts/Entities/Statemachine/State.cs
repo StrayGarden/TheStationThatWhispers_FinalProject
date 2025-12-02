@@ -8,6 +8,7 @@ public abstract class State
     //methods each statemachine would inherit from
 
     public abstract void Enter();
+    
     public abstract void Tick(float deltaTime);
 
     public abstract void Exit();

@@ -93,7 +93,7 @@ PrefabInstance:
       addedObject: {fileID: 1064410384407154527}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5956111942695359995}
+      addedObject: {fileID: 306465472243701118}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       insertIndex: -1
       addedObject: {fileID: 848692391113234795}
@@ -301,7 +301,7 @@ MonoBehaviour:
   - {fileID: 7947587249496940200}
   - {fileID: 2920068359104142584}
   - {fileID: 8627770361434339752}
---- !u!114 &5956111942695359995
+--- !u!114 &306465472243701118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,8 +319,9 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 6860258965717205439}
   <NPCData>k__BackingField: {fileID: 11400000, guid: 5b83030725a4ff64da5699290aa0abaa, type: 2}
   <WalkMovementSpeed>k__BackingField: 6
-  <RunMovementSpeed>k__BackingField: 8
-  MainNPCBehavior: 1
+  <RunMovementSpeed>k__BackingField: 10
+  MainNPCBehavior: 0
+  <RoamPoints>k__BackingField: []
 --- !u!95 &848692391113234795
 Animator:
   serializedVersion: 7

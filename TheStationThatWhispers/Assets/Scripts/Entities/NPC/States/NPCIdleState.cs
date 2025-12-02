@@ -20,6 +20,11 @@ public class NPCIdleState : NPCBaseState
     {
         //play the free look state blend tree hash
         stateMachine.Animator.CrossFadeInFixedTime(IdleHash, CrossFadeDuration);
+
+
+        Debug.Log("Entered Idle");
+
+        // stateMachine.SwitchState(new NPCSittingState(stateMachine));
     }
 
 
@@ -30,6 +35,6 @@ public class NPCIdleState : NPCBaseState
 
     public override void Exit()
     {
-        Debug.Log("Ticking");
+        Debug.Log("Exiting");
     }
 }

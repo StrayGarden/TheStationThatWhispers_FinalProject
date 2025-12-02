@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -53,7 +50,7 @@ public class NPCStateMachine : StateMachine
 
         NPCData.CreateRoamPaths(RoamPoints);
 
-        Debug.Log(RoamPoints);
+        //Debug.Log(RoamPoints);
 
         NPCData.OverrideAnimator(Animator);
 
@@ -92,11 +89,7 @@ public class NPCStateMachine : StateMachine
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     private void NPCStartBehavior()
     {

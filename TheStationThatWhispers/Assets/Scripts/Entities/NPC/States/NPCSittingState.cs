@@ -19,6 +19,8 @@ public class NPCSittingState : NPCBaseState
     {
         //play the free look state blend tree hash
         stateMachine.Animator.CrossFadeInFixedTime(SitHash, CrossFadeDuration);
+
+        Debug.Log("Entered Sitting State");
     }
 
 

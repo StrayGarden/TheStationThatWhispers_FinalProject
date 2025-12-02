@@ -9,7 +9,6 @@ public abstract class NPCBaseState : State
     {
         this.stateMachine = stateMachine;
     }
-
     //stores movement
     protected void Move(float deltaTime)
     {
