@@ -148,7 +148,7 @@ public class NPCRoamingState : NPCBaseState
 
 
 
-        Debug.Log(patrolPoints[currentPointIndex].position);
+        //Debug.Log(patrolPoints[currentPointIndex].position);
 
         stateMachine.Agent.destination = patrolPoints[currentPointIndex].position;
 

@@ -20,8 +20,12 @@ MonoBehaviour:
   GUID: 0236ef24-b220-47e2-9fba-296b9c50ee12
   Index: 1
   Input:
-  - rid: 2979418576889315405
-  - rid: 2979418576889315406
+  - rid: 1379177995214782560
+  - rid: 1379177995214782561
+  - rid: 1379177995214782562
+  - rid: 1379177995214782563
+  - rid: 1379177995214782564
+  - rid: 1379177995214782565
   Output:
   - Index: 0
     VirtualOutputIndex: 6
@@ -130,9 +134,7 @@ MonoBehaviour:
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
   OutputMaterial: {fileID: 2100000, guid: 9e339f8a6a5132b4983d196c15323830, type: 2}
-  DefaultPreset: " <sbspreset pkgurl=\"pkg://Subway_Wall\" label=\"\" >\n  <presetinput
-    identifier=\"$outputsize\" uid=\"2792568430\" type=\"8\" value=\"10,10\" />\n
-    </sbspreset>\n"
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://Subway_Wall\" label=\"\" >\n </sbspreset>\n"
   MaterialShader: Universal Render Pipeline/Lit
   RenderTextures: 0
   OutputRemaped: 0
@@ -140,7 +142,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2979418576889315405
+    - rid: 1379177995214782560
       type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 0
@@ -159,7 +161,7 @@ MonoBehaviour:
           SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []
-    - rid: 2979418576889315406
+    - rid: 1379177995214782561
       type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
       data:
         Index: 1
@@ -179,5 +181,89 @@ MonoBehaviour:
           SliderClamp: 0
           LabelFalse: 
           LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1379177995214782562
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        Description:
+          Identifier: tiles_amount_x
+          Label: Tiles Amount X
+          GuiGroup: Advanced parameters
+          GuiDescription: 
+          Type: 4
+          WidgetType: 1
+        Data: 6
+        NumericalDescription:
+          DefaultValue: 6
+          MinValue: 3
+          MaxValue: 10
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1379177995214782563
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        Description:
+          Identifier: tiles_amount_y
+          Label: Tiles Amount Y
+          GuiGroup: Advanced parameters
+          GuiDescription: 
+          Type: 4
+          WidgetType: 1
+        Data: 10
+        NumericalDescription:
+          DefaultValue: 10
+          MinValue: 3
+          MaxValue: 10
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1379177995214782564
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        Description:
+          Identifier: ao_spreading
+          Label: AO Spreading
+          GuiGroup: Basic parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1379177995214782565
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        Description:
+          Identifier: dust
+          Label: Dust
+          GuiGroup: Advanced parameters
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.71
+        NumericalDescription:
+          DefaultValue: 0.71
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
           EnumValueCount: 0
           EnumValues: []

@@ -31,7 +31,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 884089c6dab5b0c4f985bb6d376f4a1e, type: 3}
-        m_Scale: {x: 245, y: 427.3}
+        m_Scale: {x: 25.3, y: 16.6}
         m_Offset: {x: 335.4, y: 8000}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 9c8ac949be624704f9a276fe6b0467dc, type: 3}
@@ -55,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 884089c6dab5b0c4f985bb6d376f4a1e, type: 3}
-        m_Scale: {x: 245, y: 427.3}
+        m_Scale: {x: 25.3, y: 16.6}
         m_Offset: {x: 335.4, y: 8000}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 84c91a6a983673949a901271480dd41b, type: 3}
@@ -92,7 +92,7 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _BumpScale: 1
+    - _BumpScale: 2
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -107,7 +107,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.005
+    - _Parallax: 0.0062
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 1
