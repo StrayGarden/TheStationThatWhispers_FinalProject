@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayerStateMachine : StateMachine
 {
 
+
+    public static PlayerStateMachine Instance;
+
     //Statemachine Inspired from the GDTV Transversal Combat Course
 
     [field: Header("Conponents and Script References")]
@@ -79,6 +82,13 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public bool CurrentStateDebug { get; private set; } = false;
 
 
+
+    private void Awake()
+    {
+
+        //turning the player into an singleton
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

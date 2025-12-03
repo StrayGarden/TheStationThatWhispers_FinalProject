@@ -8,9 +8,6 @@ public class NPCStateMachine : StateMachine
     //Statemachine Inspired from the GDTV Transversal Combat Course
 
 
-    
-
-
     [field: Header("Conponents and Script References")]
 
     //Character Controller conponent
@@ -23,6 +20,11 @@ public class NPCStateMachine : StateMachine
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
  
     [field: SerializeField] public NPCDataSO NPCData { get; private set; }
+
+    [field: SerializeField] public PlayerStateMachine Player { get; private set; }
+
+    [field: SerializeField] public NPCIKRigManager NPCRigManager { get; private set; }
+
 
     [field: Header("NPC Movement")]
 
@@ -38,19 +40,22 @@ public class NPCStateMachine : StateMachine
 
     [field: SerializeField] NPCMainState MainNPCBehavior;
 
-
     [field: SerializeField] public GameObject[] RoamPoints { get; private set; }
+
+
+    [field: SerializeField] public float PlayerDetectionRange { get; private set; }
 
 
 
     private void Awake()
     {
 
+        
+
+
         RoamPoints = new GameObject[NPCData.RoamingBehavior.Length];
 
         NPCData.CreateRoamPaths(RoamPoints);
-
-        //Debug.Log(RoamPoints);
 
         NPCData.OverrideAnimator(Animator);
 
@@ -67,6 +72,11 @@ public class NPCStateMachine : StateMachine
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+
+
+        //Grab player straight from the Created instance
+        Player = PlayerStateMachine.Instance;
 
         //Makes sure nav mesh can't move and rotate gameobject //better to do movement through code
         Agent.updatePosition = false;
@@ -87,8 +97,6 @@ public class NPCStateMachine : StateMachine
 
 
     }
-
-
 
 
     private void NPCStartBehavior()
@@ -138,8 +146,23 @@ public class NPCStateMachine : StateMachine
         }
     }
 
-   
+
+
+
+
+
+
+    private void OnDrawGizmosSelected()
+    {
+        //makes the debug gizmo
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, PlayerDetectionRange);
+    }
+
+
 }
+
+
 
 public enum NPCMainState
 {

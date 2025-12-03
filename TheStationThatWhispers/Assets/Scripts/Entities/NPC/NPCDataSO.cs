@@ -1,5 +1,4 @@
 using UnityEngine;
-using static Unity.Cinemachine.CinemachineSplineRoll;
 
 
 //Creates menu asset for adding modular weapon scriptible object

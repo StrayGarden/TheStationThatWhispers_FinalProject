@@ -75,13 +75,27 @@ public class NPCRoamingState : NPCBaseState
             return;
         }
 
-        //if (stateMachine.NPCData.RoamingBehavior.Length == -1)
-        //{
 
-        //    Debug.Log("Not Enough Point");
-        //    return;
-        //}
+        if (IsInDetectionRange())
+        {
 
+            if (stateMachine.NPCRigManager.rigHeadWeight != 1f)
+            {
+                stateMachine.NPCRigManager.FocusOnPlayer();
+                Debug.Log("Player is in Range");
+            }
+            
+        }
+        else if (!IsInDetectionRange()) 
+        {
+
+            if (stateMachine.NPCRigManager.rigHeadWeight != 0f)
+            {
+                stateMachine.NPCRigManager.UnFocusFromPlayer();
+            }
+
+                
+        }
 
 
         if (!stateMachine.Agent.pathPending && stateMachine.Agent.remainingDistance < 1f)
@@ -147,12 +161,6 @@ public class NPCRoamingState : NPCBaseState
 
     private void MoveToPoint(float deltaTime)
     {
-        //if (stateMachine.Agent.isOnNavMesh)
-        //{
-
-        Debug.Log("Moving");
-        ////turns nav mesh target to be the players transform
-        //stateMachine.Agent.destination = stateMachine.PlayerObject.transform.position;
 
         //moves navmesh agent
         Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.WalkMovementSpeed, deltaTime);
