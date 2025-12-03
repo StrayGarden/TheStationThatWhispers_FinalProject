@@ -93,8 +93,8 @@ Material:
     - _CameraNearDepth: 9.42
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Color_Far_Threshold: 0.1
-    - _Color_Threshold: 2.67
+    - _Color_Far_Threshold: 0.3
+    - _Color_Threshold: 4.74
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -106,7 +106,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Normal_Far_Threshold: 1.53
+    - _Normal_Far_Threshold: 1.83
     - _Normal_Threshold: 0.68
     - _OVERLAY: 1
     - _OcclusionStrength: 1
