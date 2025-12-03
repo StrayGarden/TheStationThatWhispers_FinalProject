@@ -11,6 +11,15 @@ public class NPCIKRigManager : MonoBehaviour
 
     [field: SerializeField] public MultiAimConstraint HeadIKRig { get; private set; }
 
+
+
+    //private void Start()
+    //{
+        
+
+        
+    //}
+
     //
     public void FocusOnPlayer()
     {
