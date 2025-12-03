@@ -153,11 +153,11 @@ MonoBehaviour:
         transform: {fileID: 0}
         weight: 0
     m_Offset: {x: 0, y: 0, z: 0}
-    m_MinLimit: -100
-    m_MaxLimit: 100
+    m_MinLimit: -60
+    m_MaxLimit: 60
     m_AimAxis: 4
     m_UpAxis: 2
-    m_WorldUpType: 0
+    m_WorldUpType: 1
     m_WorldUpObject: {fileID: 0}
     m_WorldUpAxis: 2
     m_MaintainOffset: 0
@@ -175,7 +175,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalPosition.y
@@ -183,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalRotation.w
@@ -191,15 +191,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 98fb8f031d0aced47935e2974a641003, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -459,14 +459,14 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 848692391113234795}
   <ForceReceiver>k__BackingField: {fileID: 1500072767182926886}
   <Agent>k__BackingField: {fileID: 6860258965717205439}
-  <NPCData>k__BackingField: {fileID: 11400000, guid: 5b83030725a4ff64da5699290aa0abaa, type: 2}
+  <NPCData>k__BackingField: {fileID: 11400000, guid: cb8c72388605aba4a926b730048c062a, type: 2}
   <Player>k__BackingField: {fileID: 0}
   <NPCRigManager>k__BackingField: {fileID: 4802657988461471135}
   <WalkMovementSpeed>k__BackingField: 3
   <RunMovementSpeed>k__BackingField: 6
   MainNPCBehavior: 1
   <RoamPoints>k__BackingField: []
-  <PlayerDetectionRange>k__BackingField: 3.78
+  <PlayerDetectionRange>k__BackingField: 3.52
 --- !u!95 &848692391113234795
 Animator:
   serializedVersion: 7

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b34082cc5a76d840bcb5d26fca6505e, type: 3}
+  m_Name: NPCRoaming1
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDataSO
+  animationOverrideController: {fileID: 0}
+  <RoamingBehavior>k__BackingField:
+  - <RoamPoints>k__BackingField: {fileID: 3705910774969012698, guid: 61a51eb0876fffd46809270b8720596b, type: 3}
+  - <RoamPoints>k__BackingField: {fileID: 3698017218013649439, guid: 82574ed1f89c66c4b8ed2c7f97850cdd, type: 3}
+  - <RoamPoints>k__BackingField: {fileID: 4056017133001131011, guid: 094633ba2feca5542ad7c8627124df09, type: 3}

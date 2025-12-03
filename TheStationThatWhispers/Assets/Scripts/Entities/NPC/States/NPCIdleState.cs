@@ -5,7 +5,7 @@ public class NPCIdleState : NPCBaseState
 {
 
 
-    //hash for free look state's blend tree
+    //hash for idle hash
     private readonly int IdleHash = Animator.StringToHash("Idle");
 
     private const float CrossFadeDuration = 0.2f;
@@ -18,7 +18,7 @@ public class NPCIdleState : NPCBaseState
 
     public override void Enter()
     {
-        //play the free look state blend tree hash
+        //play idle hash
         stateMachine.Animator.CrossFadeInFixedTime(IdleHash, CrossFadeDuration);
 
 
@@ -30,6 +30,30 @@ public class NPCIdleState : NPCBaseState
 
     public override void Tick(float deltaTime)
     {
+
+
+        if (IsInDetectionRange())
+        {
+
+            if (stateMachine.NPCRigManager.rigHeadWeight != 1f)
+            {
+                stateMachine.NPCRigManager.FocusOnPlayer();
+                Debug.Log("Player is in Range");
+            }
+
+        }
+        else if (!IsInDetectionRange())
+        {
+
+            if (stateMachine.NPCRigManager.rigHeadWeight != 0f)
+            {
+                stateMachine.NPCRigManager.UnFocusFromPlayer();
+            }
+
+
+        }
+
+
         Debug.Log("Ticking");
     }
 

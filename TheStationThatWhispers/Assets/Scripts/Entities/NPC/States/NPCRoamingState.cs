@@ -25,7 +25,10 @@ public class NPCRoamingState : NPCBaseState
     public NPCRoamingState(NPCStateMachine stateMachine, int roamDataIndex) : base(stateMachine)
     {
 
+
         roamData = stateMachine.RoamPoints[roamDataIndex];
+
+        roamData.gameObject.SetActive(true);
 
     }
 
@@ -129,6 +132,7 @@ public class NPCRoamingState : NPCBaseState
 
     public override void Exit()
     {
+        roamData.gameObject.SetActive(false);
         stateMachine.Agent.ResetPath();
         stateMachine.Agent.velocity = Vector3.zero;
     }

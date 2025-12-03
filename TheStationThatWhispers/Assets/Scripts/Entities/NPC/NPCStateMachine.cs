@@ -51,21 +51,23 @@ public class NPCStateMachine : StateMachine
     {
 
         
+        if(NPCData != null)
+        {
+            RoamPoints = new GameObject[NPCData.RoamingBehavior.Length];
+
+            NPCData.CreateRoamPaths(RoamPoints);
+
+            NPCData.OverrideAnimator(Animator);
+
+            foreach (GameObject roamPatrolParent in RoamPoints)
+            {
+                    roamPatrolParent.SetActive(false);
+                
+                    
+            }
+        }
 
 
-        RoamPoints = new GameObject[NPCData.RoamingBehavior.Length];
-
-        NPCData.CreateRoamPaths(RoamPoints);
-
-        NPCData.OverrideAnimator(Animator);
-
-
-
-        //foreach (GameObject roamPatrolParent in RoamPoints)
-        //{
-        //    if (roamPatrolParent != null)
-        //        roamPatrolParent.SetActive(false);
-        //}
 
     }
 

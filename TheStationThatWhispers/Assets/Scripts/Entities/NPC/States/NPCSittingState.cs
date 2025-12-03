@@ -26,6 +26,29 @@ public class NPCSittingState : NPCBaseState
 
     public override void Tick(float deltaTime)
     {
+
+        if (IsInDetectionRange())
+        {
+
+            if (stateMachine.NPCRigManager.rigHeadWeight != 1f)
+            {
+                stateMachine.NPCRigManager.FocusOnPlayer();
+                Debug.Log("Player is in Range");
+            }
+
+        }
+        else if (!IsInDetectionRange())
+        {
+
+            if (stateMachine.NPCRigManager.rigHeadWeight != 0f)
+            {
+                stateMachine.NPCRigManager.UnFocusFromPlayer();
+            }
+
+
+        }
+
+
         Debug.Log("Ticking");
     }
 

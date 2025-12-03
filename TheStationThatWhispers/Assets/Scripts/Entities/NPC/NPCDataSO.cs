@@ -8,7 +8,7 @@ public class NPCDataSO : ScriptableObject
 
 
     //stores references to animation override
-    [SerializeField] AnimatorOverrideController weaponAnimationOverride = null;
+    [SerializeField] AnimatorOverrideController animationOverrideController = null;
 
     [field: SerializeField] public RoamingData[] RoamingBehavior { get; private set; }
 
@@ -20,9 +20,9 @@ public class NPCDataSO : ScriptableObject
 
 
 
-        if (weaponAnimationOverride != null)
+        if (animationOverrideController != null)
         {
-            animator.runtimeAnimatorController = weaponAnimationOverride;
+            animator.runtimeAnimatorController = animationOverrideController;
         }
         else 
         {

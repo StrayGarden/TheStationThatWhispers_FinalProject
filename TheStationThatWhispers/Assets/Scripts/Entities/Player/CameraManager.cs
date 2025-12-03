@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
     {
         mainCam = Camera.main;
 
-        //firstPersonCMCam.Lens.NearClipPlane = nearClipPlaneAmount;
+        firstPersonCMCam.Lens.NearClipPlane = nearClipPlaneAmount;
     }
 
     // Update is called once per frame
