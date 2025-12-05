@@ -72,7 +72,7 @@ public class NPCRoamingState : NPCBaseState
         //Debug.Log("Test");
 
 
-        if (roamData == null || patrolPoints.Length == 0)
+        if (roamData == null || patrolPoints.Length < 0 )
         {
             Debug.Log("Roam Data is null");
             return;

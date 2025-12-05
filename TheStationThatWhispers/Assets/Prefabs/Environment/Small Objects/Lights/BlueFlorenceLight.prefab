@@ -69,7 +69,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: bcb9775d892c29745bf7285743315444, type: 2}
-  - {fileID: 2100000, guid: 977250be7385fae46986a3d50457eb51, type: 2}
+  - {fileID: 2100000, guid: c80203633bf575945b2491e5ceb7f2b2, type: 2}
   - {fileID: 2100000, guid: 65d4664a5a7f264469b2299eac4c62fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5895933480771845755}
   m_Layer: 0
-  m_Name: FlorenceLight
+  m_Name: BlueFlorenceLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
