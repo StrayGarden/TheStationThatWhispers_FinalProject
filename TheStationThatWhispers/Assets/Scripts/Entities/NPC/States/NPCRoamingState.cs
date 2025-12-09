@@ -178,8 +178,11 @@ public class NPCRoamingState : NPCBaseState
     {
 
 
-        //variable for the distance between the player and the target who is accessing this
-        Vector3 lookPos = stateMachine.Agent.destination - stateMachine.transform.position;
+        //variable for the distance between the Navmesh Agent destination and the target who is accessing this
+        //Vector3 lookPos = stateMachine.Agent.destination - stateMachine.transform.position;
+
+        //gets the movement direction
+        Vector3 lookPos = stateMachine.Agent.velocity;
 
         //ignores the y value
         lookPos.y = 0f;
