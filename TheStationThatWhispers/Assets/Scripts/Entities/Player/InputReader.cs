@@ -22,6 +22,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public event Action JumpEvent;
 
+    public bool KeepInputAlive = true;
+
     //grabs the controls script generated from the input map
     private Controls controls;
 
@@ -55,7 +57,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     //Move Event
     public void OnMove(InputAction.CallbackContext context)
     {
-       MovementValue = context.ReadValue<Vector2>();
+        //if(KeepInputAlive)
+        //{
+            MovementValue = context.ReadValue<Vector2>();
+
+        //}
     }
 
     public void OnRun(InputAction.CallbackContext context)
@@ -77,7 +83,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     //stores Look vector 2 value
     public void OnLook(InputAction.CallbackContext context)
     {
-        LookValue = context.ReadValue<Vector2>();
+
+        //if (KeepInputAlive)
+        //{
+            LookValue = context.ReadValue<Vector2>();
+
+        //}
     }
 
     //Event for swapping camera states
