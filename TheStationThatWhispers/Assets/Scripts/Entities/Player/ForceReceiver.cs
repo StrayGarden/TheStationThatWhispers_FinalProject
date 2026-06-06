@@ -20,7 +20,7 @@ public class ForceReceiver : MonoBehaviour
     private Vector3 impact;
 
     //variable how much to move forward
-    private float verticalVelocity;
+    [field: SerializeField] public float verticalVelocity { get; private set; }
 
     //Vector 3 for movement from impact and moving the character forward
     public Vector3 Movement => impact + Vector3.up * verticalVelocity;
@@ -71,6 +71,6 @@ public class ForceReceiver : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
-        verticalVelocity += jumpForce;
+        verticalVelocity = jumpForce;
     }
 }

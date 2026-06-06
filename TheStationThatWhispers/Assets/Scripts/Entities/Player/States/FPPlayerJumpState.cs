@@ -8,6 +8,8 @@ public class FPPlayerJumpState : PlayerBaseState
 
     //time to transition from states
     private const float CrossFadeDuration = 0.3f;
+    
+    private float jumpTimer;
 
     private Vector3 momentum;
 
@@ -19,6 +21,8 @@ public class FPPlayerJumpState : PlayerBaseState
     {
         //makes the player ability to jump vertically
         stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
+        
+        jumpTimer = 0f;
 
         //momentum and can move the character except for y
         momentum = stateMachine.Controller.velocity;
@@ -32,6 +36,9 @@ public class FPPlayerJumpState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        
+        jumpTimer += deltaTime;
+        
         Move(momentum, deltaTime);
 
         //gets the input values from the vector 3 movement
@@ -41,7 +48,8 @@ public class FPPlayerJumpState : PlayerBaseState
 
 
         //checks if the characters velocity equals or is less than 0
-        if (stateMachine.Controller.velocity.y <= 0f)
+        //for coyote time to properly work the gravity from move needs to be refactored so that it doesn't effect the y axis
+        if (jumpTimer >= stateMachine.JumpCoyoteTime && stateMachine.ForceReceiver.verticalVelocity <= 0f)
         {
             //transitions to falling state
             stateMachine.SwitchState(new FPPlayerFallState(stateMachine));

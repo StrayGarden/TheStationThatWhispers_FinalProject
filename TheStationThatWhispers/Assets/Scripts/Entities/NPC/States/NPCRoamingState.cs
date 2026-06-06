@@ -109,7 +109,7 @@ public class NPCRoamingState : NPCBaseState
 
 
 
-            if (currentPointIndex > patrolPoints.Length)
+            if (currentPointIndex >= patrolPoints.Length)
             {
                 Debug.Log("Changing Roam State");
                 stateMachine.SwitchState(new NPCRoamingState(stateMachine, Random.Range(0, stateMachine.NPCData.RoamingBehavior.Length)));

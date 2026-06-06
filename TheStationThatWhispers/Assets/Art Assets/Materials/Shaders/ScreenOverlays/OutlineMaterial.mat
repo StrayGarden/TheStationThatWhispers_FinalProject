@@ -94,7 +94,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Color_Far_Threshold: 0.3
-    - _Color_Threshold: 4.74
+    - _Color_Threshold: 5.41
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1

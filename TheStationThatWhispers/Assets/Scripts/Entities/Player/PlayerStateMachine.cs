@@ -31,6 +31,8 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float RunMovementSpeed { get; private set; }
 
+    [field: SerializeField] public float JumpCoyoteTime { get; private set; }
+    
     [field: SerializeField] public float JumpForce { get; private set; }
 
 

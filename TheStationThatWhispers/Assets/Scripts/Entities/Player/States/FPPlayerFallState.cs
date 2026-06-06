@@ -32,7 +32,7 @@ public class FPPlayerFallState : PlayerBaseState
 
         //gets the input values from the vector 3 movement
         Vector3 movement = CalculateMovement();
-         momentum.y = 0f;
+        momentum.y = 0f;
         Move(movement * stateMachine.WalkMovementSpeed, deltaTime);
 
         //checks if the character controller is grounded
